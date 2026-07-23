@@ -1,0 +1,18 @@
+name: Despliegue Automático EVE-NG
+
+on:
+  push:
+    branches:
+      - main # Se ejecuta cada vez que subes cambios a la rama main
+
+jobs:
+  ansible-deploy:
+    runs-on: self-hosted # ¡Crucial! Usa tu servidor local, no la nube de GitHub
+    
+    steps:
+      - name: Descargar el código del repositorio
+        uses: actions/checkout@v3
+
+      - name: Ejecutar Playbook de Prueba
+        run: |
+          ansible-playbook -i inventario.ini playbook_6_prueba.yml
