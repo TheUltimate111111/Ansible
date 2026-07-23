@@ -1,0 +1,15 @@
+---
+- name: Playbook de Prueba CI/CD - Banner MOTD
+  hosts: all # O cambia 'all' por el grupo de routers en tu inventario.ini
+  gather_facts: no
+  connection: network_cli
+  
+  tasks:
+    - name: Configurar mensaje de bienvenida (Banner)
+      cisco.ios.ios_banner:
+        banner: motd
+        text: |
+          ==================================================
+             CONFIGURADO AUTOMATICAMENTE POR GITHUB ACTIONS
+          ==================================================
+        state: present
