@@ -11,5 +11,7 @@
         text: |
           ==================================================
              CONFIGURADO AUTOMATICAMENTE POR GITHUB ACTIONS
+             y diego 
           ==================================================
         state: present
+        
